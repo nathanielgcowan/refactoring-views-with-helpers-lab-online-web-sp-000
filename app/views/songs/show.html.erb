@@ -1,3 +1,15 @@
+<%# calls the helper to display the artist %>
+
 <h1><%= link_to @song.title, song_path(@song) %></h1>
+<p>Artist Name: <%= @song.artist.name %></p>
+
+    <h3><%=     
+        if @song.artist
+                link_to @song.artist.name, @song.artist
+            else
+                link_to 'Add Artist', edit_song_path(song)
+        end 
+        %>
+    </h3>
 
 <%= link_to "All Songs", songs_path %>
