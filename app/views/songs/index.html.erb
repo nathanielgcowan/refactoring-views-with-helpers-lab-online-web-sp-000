@@ -1,6 +1,9 @@
 <ul>
 <% @songs.each do |song| %>
   <li><%= link_to song.title, song_path(song) %></li>
+  <div>
+  <%= song.artist_name %> - <%= song.updated_at.strftime("Last updated %A, %b %e, at %l:%M %p") %>
+</div>
 <% end %>
 </ul>
 <br>
